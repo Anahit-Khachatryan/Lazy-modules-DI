@@ -3,9 +3,16 @@ import { PreloadAllModules, provideRouter, withDebugTracing, withPreloading } fr
 
 import { routes } from './app.routes';
 import { CustomPreloadingStrategy } from './custom-preloading-strategy';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideCore } from './core';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }), 
+    provideRouter(routes),
+    provideCore(),
+   
+  ]
 };
 
 // provideRouter(routes, withPreloading(PreloadAllModules)), // օգտագործում ենք provideRouter-ը և withPreloading-ը
