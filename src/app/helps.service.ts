@@ -7,7 +7,7 @@ import { Injectable, Injector } from '@angular/core';
 //any amen meki mot nor instance ksteghti
 //platform injectori depkum ete mi kani hat project unenank 2-i hamar el nuyn instance ksteghtsi
 export class HelpsService {
-
+  data = 5;
   constructor() {
     console.log('1')
    }
@@ -18,3 +18,11 @@ export class HelpsService {
 // platformBrowser
 //lazy modulei hamar steghstum e child injector
 // server-um ashxati, browserum, ev ayln
+
+export const instance = {
+  data: 5
+} as IInstance
+
+export interface IInstance {
+  data: number
+}
