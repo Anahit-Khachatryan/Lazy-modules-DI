@@ -1,9 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'; 
-import { HelpsService } from './app/helps.service';
-
 bootstrapApplication(AppComponent, appConfig)
 // .then(appRef => console.log(98,appRef.injector.get(HelpsService)))
   .catch((err) => console.error(err));
